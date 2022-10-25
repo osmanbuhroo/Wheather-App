@@ -1,0 +1,62 @@
+
+<div class="container" *ngIf="wheatherdata">
+  <div class="upperdata">
+    <img src="../assets/hot.jpg" *ngIf="wheatherdata.main.temp > 15">
+    <img src="../assets/cold.jpg " *ngIf="wheatherdata.main.temp<=15">
+    <div class="wheatherdata">
+      <div class="location">
+          {{wheatherdata.name}}
+      
+          
+      </div>
+      <div class="temperature"> {{wheatherdata.main.temp| number:'1.0-0'}}&#176;C</div>   
+    </div>
+
+  </div>
+  <div class="lowerdata">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="infoblock">
+        <div class="info-block-label">
+          <img src="../assets/min.png" >
+          <span>min</span>
+        </div>
+        <div class="info-block-value">
+          {{wheatherdata.main.temp_min}}&#176;C
+        </div>
+      </div>
+      <div class="infoblock">
+        <div class="info-block-label">
+          <img src="../assets/max.png" >
+          <span>max</span>
+        </div>
+        <div class="info-block-value">
+          {{wheatherdata.main.temp_max}}&#176;C
+        </div>
+      </div>
+      <div class="infoblock">
+        <div class="info-block-label">
+          <img src="../assets/humidity.jpg" >
+          <span>humidity</span>
+        </div>
+        <div class="info-block-value">
+          {{wheatherdata.main.humidity}}%
+        </div>
+      </div>
+      <div class="infoblock">
+        <div class="info-block-label">
+          <img src="../assets/wind.jpg" >
+          <span>wind</span>
+        </div>
+        <div class="info-block-value">
+          {{wheatherdata.wind.speed}}
+         km/h
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>
